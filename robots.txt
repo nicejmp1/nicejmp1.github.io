@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://webstoryboy.github.io/sitemap.xml
+Sitemap: https://webs9919.github.io/sitemap.xml

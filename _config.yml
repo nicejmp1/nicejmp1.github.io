@@ -10,33 +10,41 @@ lang: ko
 
 # Change to your timezone › https://kevinnovak.github.io/Time-Zone-Picker
 timezone: Asia/Seoul
-title: webstoryboy
-tagline: Developer
 
-description: hi!😊
+# jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+# ↓ --------------------------
+
+title: nicejmp1 # the main title
+
+tagline: Developer wonyoung
+
+description: >- # used by seo meta and the atom feed
+  hi!😊
 
 # Fill in the protocol & hostname for your site.
 # e.g. 'https://username.github.io', note that it does not end with a '/'.
-url: "https://webstoryboy.github.io"
+url: "https://nicejmp1.github.io"
 
 github:
-  username: webstoryboy # change to your github username
+  username: nicejmp1 # change to your github username
 
 twitter:
-  username: webstoryboy # change to your twitter username
+  username: nicejmp1 # change to your twitter username
 
 social:
-  name: webstoryboy
-  email: webstoryboy@naver.com # change to your email address
+  # Change to your full name.
+  # It will be displayed as the default author of the posts and the copyright owner in the Footer
+  name: nicejmp1
+  email: nicejpm@naver.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/webstoryboy # change to your twitter homepage
-    - https://github.com/webstoryboy # change to your github homepage
+    - https://twitter.com/nicejpm # change to your twitter homepage
+    - https://github.com/nicejmp1 # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
 
-google_site_verification: # fill in to your verification string
+google_site_verification: e3MUnEpcVovG5AmPezMfIJE7POyivTI5UhPaDo6BUXo
 
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
@@ -65,7 +73,7 @@ theme_mode: # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: ./assets/img/img1.jpg
+avatar: ../assets/img/img1.jpg
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
@@ -130,7 +138,7 @@ defaults:
       layout: page
       permalink: /:title/
   - scope:
-      path: assets/img/favicon/favicon.ico
+      path: /assets/img/favicons/favicon.ico
     values:
       swcache: true
   - scope:
@@ -183,3 +191,5 @@ jekyll_compose:
       tags:
       published: true
       sitemap: true
+
+

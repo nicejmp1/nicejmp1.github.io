@@ -31,12 +31,24 @@ $code-dot-gap: 0.5rem !default;
 $code-icon-width: 1.75rem !default;
 
 /* fonts */
+// @font-face {
+//     font-family: 'NanumSquareRound';
+//     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
 @font-face {
-    font-family: 'NanumSquareRound';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-family: 'MabinogiClassic';
     font-weight: normal;
     font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonMabinogi/MabinogiClassic.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonMabinogi/MabinogiClassic.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/NexonMabinogi/MabinogiClassic.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/NexonMabinogi/MabinogiClassic.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/NexonMabinogi/MabinogiClassic.ttf') format("truetype");
+    font-display: swap;
 }
 
-$font-family-base: 'NanumSquareRound', 'Microsoft Yahei', sans-serif !default;
-$font-family-heading: 'NanumSquareRound', 'Microsoft Yahei', sans-serif !default;
+$font-family-base: 'MabinogiClassic', 'Microsoft Yahei', sans-serif !default;
+$font-family-heading: 'MabinogiClassic', 'Microsoft Yahei', sans-serif !default;
