@@ -3,7 +3,7 @@ layout: post
 title: 자바스크립트 기능 살펴보기
 date: 2024-04-22 16:00 +0900
 description: 자바스크립트 기능으로 마우스 스크롤 효과 만들기
-image: ../assets/img/jeely.png
+image: ../assets/img/PARALAX.jpg1
 category: 이펙터, 스크롤효과, 자바스크립트 
 tags: 이펙터  
 published: true
