@@ -3,7 +3,7 @@ layout: post
 title: 자바스크립트 기능 살펴보기
 date: 2024-04-22 16:00 +0900
 description: 자바스크립트 기능으로 마우스 스크롤 효과 만들기
-image: ../assets/img/PARALAX.jpg1
+image: ../assets/img/PARALAX.jpg
 category: 이펙터, 스크롤효과, 자바스크립트 
 tags: 이펙터  
 published: true
@@ -377,4 +377,4 @@ onToggle: 스크롤 트리거의 활성 상태가 변경될 때마다 실행되�
 이 설정을 통해, #section08 .img 요소는 사용자가 스크롤할 때 지정된 위치에서 애니메이션을 시작하며, 스크롤 위치에 따라 실시간으로 애니메이션 속도와 방향이 조절되고, 스크롤 이벤트에 따라 추가적인 정보가 콘솔에 로깅됩니다<br>
 
 #### 다음시간에 계속...
-![goodbye](https://github.com/nicejmp1/nicejmp1.github.io/assets/163364733/7fe59976-f485-4fcd-813d-8dd862e909ec)
+![image](https://github.com/nicejmp1/nicejmp1.github.io/assets/163364733/90a41f22-19d3-4d17-b649-016d5880fa98)
