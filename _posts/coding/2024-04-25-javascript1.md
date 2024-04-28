@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 자바스크립트
-date: 2024-04-26 18:40 +0900
+date: 2024-04-25 18:40 +0900
 description: 자바스크립트 문재풀기
 image: ../assets/img/post/javascript02.png
 category: javascript
