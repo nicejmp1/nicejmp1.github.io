@@ -1,6 +1,6 @@
 ---
 layout: post
-title: javascript 이벤트객체 (마우스 드래그
+title: javascript 이벤트객체 (마우스 드래그)
 date: 2024-05-05 10:20 +0900
 description: javascript
 image: ../assets/img/post/javascript02.png
@@ -33,6 +33,7 @@ sitemap: true
 - drop: 드래그 대상 영역에 드롭 시 발생 <br>
 
 ````html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -105,6 +106,7 @@ sitemap: true
 </html>
 
 ````
+
 ## addEventListener("dragstart") : 드래그를 시작한 경우
 >dragstart 이벤트는 HTML5 드래그 앤 드롭 기능의 일부로, 사용자가 요소를 드래그하기 시작할 때 발생합니다. 이를 통해 드래그 시작 시 특정 동작을 수행할 수 있습니다. 이벤트 핸들러 내에서는 드래그되는 데이터(dataTransfer)를 설정하거나 스타일을 변경하는 등의 작업을 수행할 수 있습니다.
 
@@ -188,6 +190,7 @@ sitemap: true
 </html>
 
 ````
+
 <이벤트 흐름> <br>
 - dragstart: 드래그 시작 <br>
 - drag: 드래그 진행 중 지속적으로 발생 <br>
@@ -201,6 +204,7 @@ sitemap: true
 >dragend 이벤트는 HTML5 드래그 앤 드롭 기능의 일부로, 사용자가 요소를 드래그한 후 마우스 버튼을 놓을 때 발생합니다. 이를 통해 드래그 작업이 끝났을 때 특정 동작을 수행할 수 있습니다.
 
 ````html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -283,8 +287,10 @@ sitemap: true
 
 ## addEventListener("dragenter") : 요소위치에 드래그 했을 떄
 >dragenter 이벤트는 HTML5 드래그 앤 드롭 API의 일부로, 드래그된 요소가 드롭 대상 영역에 진입할 때 발생합니다. 이를 통해 드래그된 요소가 드롭 영역에 들어왔을 때의 동작을 정의할 수 있습니다.
+<br>
 
 ````html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
