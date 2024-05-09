@@ -32,46 +32,8 @@ sitemap: true
 - dragleave: 드래그 대상 영역을 벗어날 때 발생 <br>
 - drop: 드래그 대상 영역에 드롭 시 발생 <br>
 
-````css
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Drag Event 예제</title>
-  <style>
-    .draggable {
-      width: 100px;
-      height: 100px;
-      background-color: lightcoral;
-      border: 2px solid darkred;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: grab;
-    }
+````javascript
 
-    .dropzone {
-      width: 300px;
-      height: 300px;
-      background-color: lightblue;
-      border: 2px solid navy;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="draggable" id="draggable" draggable="true">Drag me!</div>
-  <div class="dropzone" id="dropzone">Drop zone</div>
-
-  <script>
     const draggable = document.getElementById('draggable');
     const dropzone = document.getElementById('dropzone');
 
@@ -99,10 +61,6 @@ sitemap: true
       dropzone.appendChild(draggableElement);
       console.log('Dropped!');
     });
-  </script>
-
-</body>
-</html>
 ````
 
 ## addEventListener("dragstart") : 드래그를 시작한 경우
