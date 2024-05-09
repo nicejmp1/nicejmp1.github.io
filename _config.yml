@@ -93,7 +93,10 @@ assets:
 pwa:
   enabled: true # the option for PWA feature
 
+plugins:
+  - jekyll-paginate
 paginate: 10
+paginate_path: "/page:num/"
 
 # The base URL of your site
 baseurl: ""
