@@ -34,7 +34,7 @@ sitemap: true
 
 ````html
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -103,7 +103,7 @@ sitemap: true
   </script>
 
 </body>
-</html>
+</html> -->
 
 ````
 
@@ -111,7 +111,7 @@ sitemap: true
 >dragstart 이벤트는 HTML5 드래그 앤 드롭 기능의 일부로, 사용자가 요소를 드래그하기 시작할 때 발생합니다. 이를 통해 드래그 시작 시 특정 동작을 수행할 수 있습니다. 이벤트 핸들러 내에서는 드래그되는 데이터(dataTransfer)를 설정하거나 스타일을 변경하는 등의 작업을 수행할 수 있습니다.
 
 ````html
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -187,7 +187,7 @@ sitemap: true
   </script>
 
 </body>
-</html>
+</html> -->
 
 ````
 
@@ -205,7 +205,7 @@ sitemap: true
 
 ````html
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -281,7 +281,7 @@ sitemap: true
   </script>
 
 </body>
-</html>
+</html> -->
 
 ````
 
@@ -290,7 +290,7 @@ sitemap: true
 <br>
 
 ````html
-
+<!-- 
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -378,7 +378,7 @@ sitemap: true
   </script>
 
 </body>
-</html>
+</html> -->
 
 ````
 
@@ -386,7 +386,7 @@ sitemap: true
 > dragover 이벤트는 HTML5 드래그 앤 드롭 API의 일부로, 드래그된 요소가 드롭 영역 위에 있을 때 지속적으로 발생합니다. dragover 이벤트는 드롭을 허용하기 위해 event.preventDefault()를 반드시 호출해야 합니다.
 
 ````html
-<html lang="en">
+<!-- <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -475,7 +475,7 @@ sitemap: true
   </script>
 
 </body>
-</html>
+</html> -->
 
 ````
 
@@ -483,7 +483,7 @@ sitemap: true
 >addEventListener("dragleave")는 드래그 앤 드롭(Drag and Drop) 기능을 구현할 때 dragleave 이벤트를 처리하기 위해 사용됩니다. 이 이벤트는 사용자가 드래그 중인 요소가 특정 드롭 영역을 벗어날 때 발생합니다.
 
 ````html
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -541,7 +541,7 @@ sitemap: true
         });
     </script>
 </body>
-</html>
+</html> -->
 
 ````
 
@@ -549,7 +549,7 @@ sitemap: true
 >addEventListener("drop")는 드래그 앤 드롭(Drag and Drop) 기능을 구현할 때 drop 이벤트를 처리하기 위해 사용됩니다. drop 이벤트는 사용자가 드래그 중인 요소를 드롭 영역에 떨어뜨릴 때 발생합니다.
 
 ````html
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -624,7 +624,7 @@ sitemap: true
         });
     </script>
 </body>
-</html>
+</html> -->
 
 ````
 #### 다음시간에 계속...
