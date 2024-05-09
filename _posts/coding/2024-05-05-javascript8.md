@@ -32,8 +32,8 @@ sitemap: true
 - dragleave: 드래그 대상 영역을 벗어날 때 발생 <br>
 - drop: 드래그 대상 영역에 드롭 시 발생 <br>
 
-````html
-<!-- <!DOCTYPE html>
+````css
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -102,14 +102,14 @@ sitemap: true
   </script>
 
 </body>
-</html> -->
+</html>
 ````
 
 ## addEventListener("dragstart") : 드래그를 시작한 경우
 >dragstart 이벤트는 HTML5 드래그 앤 드롭 기능의 일부로, 사용자가 요소를 드래그하기 시작할 때 발생합니다. 이를 통해 드래그 시작 시 특정 동작을 수행할 수 있습니다. 이벤트 핸들러 내에서는 드래그되는 데이터(dataTransfer)를 설정하거나 스타일을 변경하는 등의 작업을 수행할 수 있습니다.
 
-````html
-<!-- <!DOCTYPE html>
+````css
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -185,7 +185,7 @@ sitemap: true
   </script>
 
 </body>
-</html> -->
+</html>
 
 ````
 
