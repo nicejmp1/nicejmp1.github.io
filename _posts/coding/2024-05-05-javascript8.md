@@ -1,7 +1,7 @@
 ---
 layout: post
-title: javascript 이벤트객체 (마우스 드래그)
-date: 2024-05-05 10:20 +0900
+title: javascript 함수
+date: 2024-05-05 12:20 +0900
 description: javascript
 image: ../assets/img/post/javascript02.png
 category: javascript
@@ -10,577 +10,197 @@ published: true
 sitemap: true
 ---
 
-# javascript 마우스 드래그
+# javascript  함수
+안녕하세요!! 오늘은 javascript 함수에 대해 알아보도록 하겠습니다.
 
-안녕하세요! 오늘은 마우스 드래그 이벤트메서드에 대해 설명해드리겠습니다.
-
-## addEventListener("drag") : 드래그 중인 경우
-> "drag" 이벤트는 HTML5에서 제공되는 드래그 앤 드롭 기능의 일부로, 사용자가 요소를 드래그할 때 지속적으로 발생합니다. addEventListener를 사용하여 특정 요소에 drag 이벤트를 추가할 수 있습니다.
-
-<흐름> <br>
-- 드래그가 시작되면 dragstart 이벤트가 발생합니다. <br>
-- 드래그 중에 마우스가 이동할 때마다 drag 이벤트가 발생합니다. <br>
-- 드래그가 종료되면 dragend 이벤트가 발생합니다. <br>
-
-<드래그 앤 드롭 관련 주요 이벤트> <br>
-- dragstart: 드래그 시작 시 발생 <br>
-- drag: 드래그하는 동안 지속적으로 발생 <br>
-- dragend: 드래그 종료 시 발생 <br>
-- dragenter: 드래그 대상 영역에 진입 시 발생 <br>
-- dragover: 드래그 대상 영역 위에 있을 때 - 지속적으로 발생 <br>
-- dragleave: 드래그 대상 영역을 벗어날 때 발생 <br>
-- drop: 드래그 대상 영역에 드롭 시 발생 <br>
+## 선언적 함수
+>선언적 함수는 코드의 상단에 function 키워드를 사용하여 정의된 함수를 말합니다. 이 함수는 선언된 위치와 관계없이 어디서든 호출할 수 있으며, 코드 실행 전에 메모리에 할당되어 호이스팅에 영향을 받습니다. 다른 말로는 함수 선언문이라고도 불리며, 전역 스코프나 해당 함수가 정의된 스코프에서 사용될 수 있습니다. 함수가 선언될 때마다 함수 객체가 만들어지며, 이후에 언제든 해당 함수를 호출할 수 있습니다.
 
 ````javascript
-
-    const draggable = document.getElementById('draggable');
-    const dropzone = document.getElementById('dropzone');
-
-    draggable.addEventListener('dragstart', function (event) {
-      event.dataTransfer.setData('text/plain', event.target.id);
-      draggable.style.backgroundColor = 'darkred';
-    });
-
-    draggable.addEventListener('drag', function (event) {
-      console.log(`Dragging... (${event.pageX}, ${event.pageY})`);
-    });
-
-    draggable.addEventListener('dragend', function () {
-      draggable.style.backgroundColor = 'lightcoral';
-    });
-
-    dropzone.addEventListener('dragover', function (event) {
-      event.preventDefault(); // 드래그 허용
-    });
-
-    dropzone.addEventListener('drop', function (event) {
-      event.preventDefault();
-      const draggableId = event.dataTransfer.getData('text/plain');
-      const draggableElement = document.getElementById(draggableId);
-      dropzone.appendChild(draggableElement);
-      console.log('Dropped!');
-    });
+{
+    function func() {
+        console.log("01. 함수가 실행되었습니다.");
+    }
+    func();
+}
 ````
 
-## addEventListener("dragstart") : 드래그를 시작한 경우
->dragstart 이벤트는 HTML5 드래그 앤 드롭 기능의 일부로, 사용자가 요소를 드래그하기 시작할 때 발생합니다. 이를 통해 드래그 시작 시 특정 동작을 수행할 수 있습니다. 이벤트 핸들러 내에서는 드래그되는 데이터(dataTransfer)를 설정하거나 스타일을 변경하는 등의 작업을 수행할 수 있습니다.
+## 익명 함수
+>익명 함수는 이름이 없는 함수를 의미합니다. 일반적으로 함수를 선언할 때 이름을 명시하지 않고 사용됩니다. 대부분의 경우 함수 표현식이나 콜백 함수로 사용되며, 다른 함수 내에서 일회성으로 사용될 때 유용합니다. 예를 들어, 변수에 할당하여 사용하거나 다른 함수의 매개변수로 전달되어 호출될 수 있습니다. 이러한 함수는 주로 한 번만 필요하거나 특정 작업을 처리하는 데에만 사용되므로 이름을 붙이지 않고도 충분히 이해할 수 있습니다. 이름이 없어도 함수의 동작이나 목적을 파악하기 쉽고 간결한 코드를 작성할 수 있도록 해줍니다.
 
-````css
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>dragstart 이벤트 예제</title>
-  <style>
-    .draggable {
-      width: 100px;
-      height: 100px;
-      background-color: lightcoral;
-      border: 2px solid darkred;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: grab;
-      margin-right: 10px;
+````javascript
+{
+    const func = function () {
+        console.log("02. 함수가 실행되었습니다.");
     }
-
-    .dropzone {
-      width: 300px;
-      height: 300px;
-      background-color: lightblue;
-      border: 2px solid navy;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-    }
-
-    .container {
-      display: flex;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="container">
-    <div class="draggable" id="draggable1" draggable="true">Drag me 1!</div>
-    <div class="draggable" id="draggable2" draggable="true">Drag me 2!</div>
-  </div>
-  <div class="dropzone" id="dropzone">Drop zone</div>
-
-  <script>
-    const draggables = document.querySelectorAll('.draggable');
-    const dropzone = document.getElementById('dropzone');
-
-    draggables.forEach(draggable => {
-      draggable.addEventListener('dragstart', function (event) {
-        event.dataTransfer.setData('text/plain', event.target.id);
-        event.target.style.backgroundColor = 'darkred';
-        console.log(`Drag started for ${event.target.id}`);
-      });
-
-      draggable.addEventListener('dragend', function (event) {
-        event.target.style.backgroundColor = 'lightcoral';
-        console.log(`Drag ended for ${event.target.id}`);
-      });
-    });
-
-    dropzone.addEventListener('dragover', function (event) {
-      event.preventDefault(); // 드래그 허용
-    });
-
-    dropzone.addEventListener('drop', function (event) {
-      event.preventDefault();
-      const draggableId = event.dataTransfer.getData('text/plain');
-      const draggableElement = document.getElementById(draggableId);
-      dropzone.appendChild(draggableElement);
-      console.log(`Dropped ${draggableId}`);
-    });
-  </script>
-
-</body>
-</html>
-
+    func();
+}
 ````
 
-<이벤트 흐름> <br>
-- dragstart: 드래그 시작 <br>
-- drag: 드래그 진행 중 지속적으로 발생 <br>
-- dragend: 드래그 종료 <br>
-- dragenter: 드래그 대상 영역에 진입 <br>
-- dragover: 드래그 대상 영역 위에 있을 때 - 지속적으로 발생 <br>
-- dragleave: 드래그 대상 영역을 벗어날 때 발생 <br>
-- drop: 드래그 대상 영역에 드롭될 때 발생 <br>
+## 매개변수 함수
+>매개변수 함수는 다른 함수의 매개변수로 전달되는 함수를 말합니다. 위 코드에서는 "func"와 "func1"이라는 두 함수를 정의하고 있습니다. 두 함수 모두 하나의 매개변수를 받아들이고, 이 매개변수를 콘솔에 출력하는 역할을 수행합니다. 따라서 이 두 함수는 문자열을 받아들이는 매개변수 함수로 정의됩니다.
 
-## addEventListener("dragend") : 드래그 끝난 경우
->dragend 이벤트는 HTML5 드래그 앤 드롭 기능의 일부로, 사용자가 요소를 드래그한 후 마우스 버튼을 놓을 때 발생합니다. 이를 통해 드래그 작업이 끝났을 때 특정 동작을 수행할 수 있습니다.
-
-````html
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>dragend 이벤트 예제</title>
-  <style>
-    .draggable {
-      width: 100px;
-      height: 100px;
-      background-color: lightcoral;
-      border: 2px solid darkred;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: grab;
-      margin-right: 10px;
+````javascript
+{
+   // 선언적 함수
+    function func(str) {
+        console.log(str);
     }
+    func("03. 함수가 실행되었습니다.");
 
-    .dropzone {
-      width: 300px;
-      height: 300px;
-      background-color: lightblue;
-      border: 2px solid navy;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
+    //익명 함수
+    const func1 = function (str) {
+        console.log(str);
     }
-
-    .container {
-      display: flex;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="container">
-    <div class="draggable" id="draggable1" draggable="true">Drag me 1!</div>
-    <div class="draggable" id="draggable2" draggable="true">Drag me 2!</div>
-  </div>
-  <div class="dropzone" id="dropzone">Drop zone</div>
-
-  <script>
-    const draggables = document.querySelectorAll('.draggable');
-    const dropzone = document.getElementById('dropzone');
-
-    draggables.forEach(draggable => {
-      draggable.addEventListener('dragstart', function (event) {
-        event.dataTransfer.setData('text/plain', event.target.id);
-        event.target.style.backgroundColor = 'darkred';
-        console.log(`Drag started for ${event.target.id}`);
-      });
-
-      draggable.addEventListener('dragend', function (event) {
-        event.target.style.backgroundColor = 'lightcoral';
-        console.log(`Drag ended for ${event.target.id}`);
-      });
-    });
-
-    dropzone.addEventListener('dragover', function (event) {
-      event.preventDefault(); // 드래그 허용
-    });
-
-    dropzone.addEventListener('drop', function (event) {
-      event.preventDefault();
-      const draggableId = event.dataTransfer.getData('text/plain');
-      const draggableElement = document.getElementById(draggableId);
-      dropzone.appendChild(draggableElement);
-      console.log(`Dropped ${draggableId}`);
-    });
-  </script>
-
-</body>
-</html> -->
-
+    func("03. 함수가 실행되었습니다.");
+}
 ````
 
-## addEventListener("dragenter") : 요소위치에 드래그 했을 떄
->dragenter 이벤트는 HTML5 드래그 앤 드롭 API의 일부로, 드래그된 요소가 드롭 대상 영역에 진입할 때 발생합니다. 이를 통해 드래그된 요소가 드롭 영역에 들어왔을 때의 동작을 정의할 수 있습니다.
-<br>
+## 리턴값 함수
+>리턴값 함수는 호출되었을 때 결과를 반환하는 함수를 말합니다. 이 함수는 실행된 결과를 반환하여 해당 함수가 호출된 곳에서 그 값을 받아 사용할 수 있습니다. 보통 함수 내에서 계산된 값을 반환하거나 다른 작업의 결과를 반환하는데 사용됩니다. 반환된 값은 함수를 호출한 코드에서 변수에 할당하거나 다른 함수의 인자로 전달하여 활용될 수 있습니다
 
-````html
-<!-- 
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>dragenter 이벤트 예제</title>
-  <style>
-    .draggable {
-      width: 100px;
-      height: 100px;
-      background-color: lightcoral;
-      border: 2px solid darkred;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: grab;
-      margin-right: 10px;
+````javascript
+{
+    //선언적 함수
+    function func() {
+        return "04. 함수가 실행되었습니다."
     }
+    console.log(func());
 
-    .dropzone {
-      width: 300px;
-      height: 300px;
-      background-color: lightblue;
-      border: 2px solid navy;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
+    //익명 함수
+    const func1 = function () {
+        return "04. 함수가 실행되었습니다."
     }
-
-    .container {
-      display: flex;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="container">
-    <div class="draggable" id="draggable1" draggable="true">Drag me 1!</div>
-    <div class="draggable" id="draggable2" draggable="true">Drag me 2!</div>
-  </div>
-  <div class="dropzone" id="dropzone">Drop zone</div>
-
-  <script>
-    const draggables = document.querySelectorAll('.draggable');
-    const dropzone = document.getElementById('dropzone');
-
-    draggables.forEach(draggable => {
-      draggable.addEventListener('dragstart', function (event) {
-        event.dataTransfer.setData('text/plain', event.target.id);
-        event.target.style.backgroundColor = 'darkred';
-        console.log(`Drag started for ${event.target.id}`);
-      });
-
-      draggable.addEventListener('dragend', function (event) {
-        event.target.style.backgroundColor = 'lightcoral';
-        console.log(`Drag ended for ${event.target.id}`);
-      });
-    });
-
-    dropzone.addEventListener('dragenter', function (event) {
-      event.preventDefault();
-      dropzone.style.backgroundColor = 'darkblue';
-      console.log('Drag entered drop zone');
-    });
-
-    dropzone.addEventListener('dragleave', function (event) {
-      dropzone.style.backgroundColor = 'lightblue';
-      console.log('Drag left drop zone');
-    });
-
-    dropzone.addEventListener('dragover', function (event) {
-      event.preventDefault(); // 드래그 허용
-    });
-
-    dropzone.addEventListener('drop', function (event) {
-      event.preventDefault();
-      const draggableId = event.dataTransfer.getData('text/plain');
-      const draggableElement = document.getElementById(draggableId);
-      dropzone.appendChild(draggableElement);
-      dropzone.style.backgroundColor = 'lightblue';
-      console.log(`Dropped ${draggableId}`);
-    });
-  </script>
-
-</body>
-</html> -->
-
+    console.log(func1());
+}
 ````
 
-## addEventListener("dragover") : 요소 위치 위에 있을떄
-> dragover 이벤트는 HTML5 드래그 앤 드롭 API의 일부로, 드래그된 요소가 드롭 영역 위에 있을 때 지속적으로 발생합니다. dragover 이벤트는 드롭을 허용하기 위해 event.preventDefault()를 반드시 호출해야 합니다.
+## 매개변수 + 리턴값 함수
+>주어진 코드에서 함수는 외부로부터 문자열을 입력받아들이고, 그 입력값을 그대로 반환합니다. 이는 매개변수와 리턴값을 가진 함수의 기본적인 형태입니다. 함수는 입력값을 받아들인 후 내부에서 특정 작업을 수행하거나 가공한 후 결과를 반환하는데, 여기서는 입력값을 그대로 반환하여 출력합니다. 이렇게 하면 함수는 입력값에 따라 결과를 다르게 반환할 수 있으며, 이는 함수의 다양한 활용성을 보여줍니다. 함수는 코드의 재사용성과 가독성을 높이는데 유용하며, 다양한 기능을 제공할 수 있습니다
 
-````html
-<!-- <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>dragover 이벤트 예제</title>
-  <style>
-    .draggable {
-      width: 100px;
-      height: 100px;
-      background-color: lightcoral;
-      border: 2px solid darkred;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: grab;
-      margin-right: 10px;
+````javascript
+{
+    // 선언적 함수
+    function func(str) {
+        return str;
     }
+    console.log(func("05. 함수가 실행되었습니다."));
 
-    .dropzone {
-      width: 300px;
-      height: 300px;
-      background-color: lightblue;
-      border: 2px solid navy;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
+    // 익명 함수
+    const func1 = function (str) {
+        return str;
     }
-
-    .container {
-      display: flex;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="container">
-    <div class="draggable" id="draggable1" draggable="true">Drag me 1!</div>
-    <div class="draggable" id="draggable2" draggable="true">Drag me 2!</div>
-  </div>
-  <div class="dropzone" id="dropzone">Drop zone</div>
-
-  <script>
-    const draggables = document.querySelectorAll('.draggable');
-    const dropzone = document.getElementById('dropzone');
-
-    draggables.forEach(draggable => {
-      draggable.addEventListener('dragstart', function (event) {
-        event.dataTransfer.setData('text/plain', event.target.id);
-        event.target.style.backgroundColor = 'darkred';
-        console.log(`Drag started for ${event.target.id}`);
-      });
-
-      draggable.addEventListener('dragend', function (event) {
-        event.target.style.backgroundColor = 'lightcoral';
-        console.log(`Drag ended for ${event.target.id}`);
-      });
-    });
-
-    dropzone.addEventListener('dragenter', function (event) {
-      event.preventDefault();
-      dropzone.style.backgroundColor = 'darkblue';
-      console.log('Drag entered drop zone');
-    });
-
-    dropzone.addEventListener('dragleave', function (event) {
-      dropzone.style.backgroundColor = 'lightblue';
-      console.log('Drag left drop zone');
-    });
-
-    dropzone.addEventListener('dragover', function (event) {
-      event.preventDefault(); // 드래그 허용
-      dropzone.style.backgroundColor = 'darkblue';
-      console.log('Drag over drop zone');
-    });
-
-    dropzone.addEventListener('drop', function (event) {
-      event.preventDefault();
-      const draggableId = event.dataTransfer.getData('text/plain');
-      const draggableElement = document.getElementById(draggableId);
-      dropzone.appendChild(draggableElement);
-      dropzone.style.backgroundColor = 'lightblue';
-      console.log(`Dropped ${draggableId}`);
-    });
-  </script>
-
-</body>
-</html> -->
-
+    console.log(func1("05. 함수가 실행되었습니다."));
+}
 ````
 
-## addEventListener("dragleave") : 요소의 위치 위에서 벗어 났을때
->addEventListener("dragleave")는 드래그 앤 드롭(Drag and Drop) 기능을 구현할 때 dragleave 이벤트를 처리하기 위해 사용됩니다. 이 이벤트는 사용자가 드래그 중인 요소가 특정 드롭 영역을 벗어날 때 발생합니다.
+## 선언적 함수
+>화살표 함수는 함수를 더 간결하게 정의하는데 사용됩니다. 기존의 함수 선언 방식인 function 키워드 대신 =>를 사용하여 함수를 정의합니다. 주로 한 줄로 간단한 작업을 하는 함수를 정의할 때 유용하게 활용되며, 익명 함수를 변수에 할당할 때 자주 사용됩니다. 이를 통해 코드를 더 읽기 쉽고 간결하게 만들어줍니다
 
-````html
-<!-- <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>dragleave 이벤트 예시</title>
-    <style>
-        .dropzone {
-            width: 200px;
-            height: 200px;
-            border: 2px dashed #ccc;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px;
-            transition: background-color 0.3s;
-        }
+````javascript
+{
+    // 선언적 함수 
+    function func() {
+        console.log("06. 함수가 실행되었습니다.")
+    }
+    func();
 
-        .dropzone.hover {
-            background-color: #e0e0e0;
-        }
-    </style>
-</head>
-<body>
-    <h1>드래그 앤 드롭 예시</h1>
-    <div class="dropzone" id="dropzone">
-        드롭하세요
-    </div>
-
-    <script>
-        // 드롭존 요소 가져오기
-        const dropzone = document.getElementById('dropzone');
-
-        // dragenter 이벤트: 드롭존에 들어올 때
-        dropzone.addEventListener('dragenter', (event) => {
-            event.preventDefault();
-            dropzone.classList.add('hover');
-        });
-
-        // dragleave 이벤트: 드롭존에서 나갈 때
-        dropzone.addEventListener('dragleave', (event) => {
-            event.preventDefault();
-            dropzone.classList.remove('hover');
-            console.log('드래그 영역을 벗어났습니다.');
-        });
-
-        // dragover 이벤트: 드롭존 위에 있을 때
-        dropzone.addEventListener('dragover', (event) => {
-            event.preventDefault();
-        });
-
-        // drop 이벤트: 드롭이 이루어질 때
-        dropzone.addEventListener('drop', (event) => {
-            event.preventDefault();
-            dropzone.classList.remove('hover');
-            console.log('드롭이 이루어졌습니다.');
-        });
-    </script>
-</body>
-</html> -->
-
+    // 선언적 함수를 화살표 함수로 바꿈
+    func = () => {
+        console.log("06. 함수가 실행되었습니다.")
+    }
+    func();
+}
 ````
 
-## addEventListener("drop") : 요소의 위치에 드롭했을 떄
->addEventListener("drop")는 드래그 앤 드롭(Drag and Drop) 기능을 구현할 때 drop 이벤트를 처리하기 위해 사용됩니다. drop 이벤트는 사용자가 드래그 중인 요소를 드롭 영역에 떨어뜨릴 때 발생합니다.
+## 익명함수
+>화살표 함수는 익명 함수를 더 간결하고 명확하게 작성할 수 있는 ES6 문법입니다. 익명 함수란 이름이 없는 함수를 말하며, 주로 콜백 함수나 간단한 함수를 정의할 때 사용됩니다. 화살표 함수는 익명 함수를 활용하여 함수를 정의하는 것이므로, 익명 함수의 특성을 그대로 가지고 있습니다. 이를 통해 화살표 함수는 코드를 더 간결하게 표현할 수 있고, 일반적으로 함수의 선언을 더 짧고 명확하게 만들어줍니다.
 
-````html
-<!-- <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>drop 이벤트 예시</title>
-    <style>
-        .dropzone {
-            width: 200px;
-            height: 200px;
-            border: 2px dashed #ccc;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px;
-            transition: background-color 0.3s;
-        }
+````javascript
+{
+    //익명 함수
+    const func = function () {
+        console.log("07. 함수가 실행되었습니다.")
+    };
+    func();
 
-        .dropzone.hover {
-            background-color: #e0e0e0;
-        }
-    </style>
-</head>
-<body>
-    <h1>드래그 앤 드롭 예시</h1>
-    <div class="dropzone" id="dropzone">
-        드롭하세요
-    </div>
-
-    <script>
-        // 드롭존 요소 가져오기
-        const dropzone = document.getElementById('dropzone');
-
-        // dragenter 이벤트: 드롭존에 들어올 때
-        dropzone.addEventListener('dragenter', (event) => {
-            event.preventDefault();
-            dropzone.classList.add('hover');
-        });
-
-        // dragleave 이벤트: 드롭존에서 나갈 때
-        dropzone.addEventListener('dragleave', (event) => {
-            event.preventDefault();
-            dropzone.classList.remove('hover');
-        });
-
-        // dragover 이벤트: 드롭존 위에 있을 때
-        dropzone.addEventListener('dragover', (event) => {
-            event.preventDefault();
-        });
-
-        // drop 이벤트: 드롭이 이루어질 때
-        dropzone.addEventListener('drop', (event) => {
-            event.preventDefault();
-            dropzone.classList.remove('hover');
-            
-            // 드래그된 데이터를 가져오기
-            const data = event.dataTransfer.getData('text/plain');
-            console.log(`드롭된 데이터: ${data}`);
-        });
-
-        // 드래그 가능 요소 만들기
-        document.addEventListener('DOMContentLoaded', () => {
-            const draggableItem = document.createElement('div');
-            draggableItem.textContent = '드래그할 요소';
-            draggableItem.style.cursor = 'pointer';
-            draggableItem.draggable = true;
-            draggableItem.id = 'draggableItem';
-            document.body.appendChild(draggableItem);
-
-            // 드래그 시작 이벤트 처리
-            draggableItem.addEventListener('dragstart', (event) => {
-                event.dataTransfer.setData('text/plain', draggableItem.id);
-            });
-        });
-    </script>
-</body>
-</html> -->
-
+    // 익명함수를 화살표 함수로 변경
+    const func1 = () => {
+        console.log("07. 함수가 실행되었습니다.")
+    };
+    func1();
+}
 ````
+
+## 매개변수 함수
+>매개변수는 함수가 호출될 때 함수에 전달되는 값을 받아들이는 변수를 말합니다. 함수를 정의할 때 괄호 () 안에 매개변수를 지정하여 함수가 호출될 때 이를 사용할 수 있습니다. 매개변수는 함수 내부에서 변수처럼 사용되며, 함수가 호출될 때 전달된 값(argument)에 대응됩니다. 화살표 함수에서 매개변수는 화살표 =>를 통해 함수의 몸체와 구분되며, 함수의 인자로 동작합니다. 이를 통해 함수가 호출될 때 매개변수에 전달된 값을 함수 내부에서 사용할 수 있습니다.
+
+````javascript
+{
+    // 선언적 함수 
+    func = (str) => {
+        console.log(str);
+    }
+    func("08. 함수가 실행되었습니다.");
+        
+    // 익명 함수
+    const func1 = (str) => {
+        console.log(str);
+    }
+    func1("08. 함수가 실행되었습니다.");
+}
+````
+
+## 리턴값 함수 (결과,종료)
+> 화살표 함수는 ES6에서 도입된 간결한 함수 표현식으로, 함수를 더 간결하게 정의할 수 있는 문법입니다. 함수 내부에서 return 키워드를 사용하여 명시적으로 반환값을 지정하며, 호출한 곳으로 그 값을 전달합니다. 이를 통해 함수의 실행 결과를 간결하게 반환할 수 있고, 코드의 가독성을 향상시킵니다.
+
+````javascript
+{
+    //선언적 함수
+    func = () => {
+        return "09. 함수가 실행되었습니다."
+    }
+    console.log(func());
+
+    //익명 함수
+    const func1 = () => {
+        return "09. 함수가 실행되었습니다."
+    }
+    console.log(func1());
+}
+````
+
+## 매개변수 + 리턴값 함수
+>화살표 함수는 ES6에서 추가된 새로운 함수 선언 방식입니다. 이 함수는 기존의 함수 선언 방식보다 더 간결하고 명확한 구문을 제공합니다. 화살표 함수는 다음과 같은 특징을 가지고있습니다.
+매개변수: 함수의 매개변수를 괄호로 묶어서 받아들입니다. 매개변수가 하나인 경우에는 괄호를 생략할 수 있습니다.
+화살표 (=>): 화살표 함수를 정의하는데 사용됩니다. 매개변수와 함수의 몸체를 구분하는 역할을 합니다.
+함수 몸체: 함수의 몸체는 중괄호 {}로 감싸지지 않고, 단일 표현식이거나 여러 표현식이 될 수 있습니다.
+리턴값: 함수 몸체가 단일 표현식으로 이루어진 경우, return 키워드와 중괄호를 생략하여 바로 결과를 반환할 수 있습니다.
+이러한 특징들을 이용하면 함수를 더 간결하게 작성할 수 있고, 특히 간단한 작업을 하는 함수를 정의할 때 유용합니다.
+
+````javascript
+{
+    // 익명 함수(화살표 함수) + 매개변수 + 리턴값
+    const func = (str) => {
+        return str;
+    }
+    console.log(func("10. 함수가 실행되었습니다."));
+
+    // 매개변수가 하나이면 괄호 생략 가능
+    const func2 = str => {
+        return str;
+    }
+    console.log(func2("10. 함수가 실행되었습니다."));
+
+    // 리턴 생략
+    const func3 = str => str;
+    console.log(func3("10. 함수가 실행되었습니다."));
+
+    // 선언적 함수(가독성X)
+    func4 = str => str;
+    console.log(func4("10. 함수가 실행되었습니다."));
+}
+````
+
 #### 다음시간에 계속...
 ![image](https://github.com/nicejmp1/nicejmp1.github.io/assets/163364733/90a41f22-19d3-4d17-b649-016d5880fa98)
