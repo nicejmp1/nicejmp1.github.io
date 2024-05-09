@@ -1,6 +1,6 @@
 ---
 layout: page
-pagination: enabled
+# The Category layout
 ---
 
 {% include lang.html %}
@@ -9,11 +9,11 @@ pagination: enabled
   <h1 class="ps-lg-2">
     <i class="far fa-folder-open fa-fw text-muted"></i>
     {{ page.title }}
-    <span class="lead text-muted ps-2">{{ paginator.total_posts }}</span>
+    <span class="lead text-muted ps-2">{{ page.posts | size }}</span>
   </h1>
 
   <ul class="content ps-0">
-    {% for post in paginator.posts %}
+    {% for post in page.posts %}
     <li class="d-flex justify-content-between px-md-3">
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
       <span class="dash flex-grow-1"></span>
@@ -21,29 +21,4 @@ pagination: enabled
     </li>
     {% endfor %}
   </ul>
-
-  <!-- 페이지네이션 링크 -->
-  <nav aria-label="Page navigation">
-    <ul class="pagination">
-      {% if paginator.previous_page %}
-      <li class="page-item">
-        <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}" aria-label="Previous">
-          <span aria-hidden="true">&laquo;</span>
-        </a>
-      </li>
-      {% endif %}
-      {% for page_number in (1..paginator.total_pages) %}
-      <li class="page-item {% if page_number == paginator.page %}active{% endif %}">
-        <a class="page-link" href="{{ paginator.page_path(page_number) | relative_url }}">{{ page_number }}</a>
-      </li>
-      {% endfor %}
-      {% if paginator.next_page %}
-      <li class="page-item">
-        <a class="page-link" href="{{ paginator.next_page_path | relative_url }}" aria-label="Next">
-          <span aria-hidden="true">&raquo;</span>
-        </a>
-      </li>
-      {% endif %}
-    </ul>
-  </nav>
 </div>
