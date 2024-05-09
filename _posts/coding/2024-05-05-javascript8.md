@@ -17,7 +17,7 @@ sitemap: true
 ## addEventListener("drag") : 드래그 중인 경우
 > "drag" 이벤트는 HTML5에서 제공되는 드래그 앤 드롭 기능의 일부로, 사용자가 요소를 드래그할 때 지속적으로 발생합니다. addEventListener를 사용하여 특정 요소에 drag 이벤트를 추가할 수 있습니다.
 
-<이벤트 흐름> <br>
+<흐름> <br>
 - 드래그가 시작되면 dragstart 이벤트가 발생합니다. <br>
 - 드래그 중에 마우스가 이동할 때마다 drag 이벤트가 발생합니다. <br>
 - 드래그가 종료되면 dragend 이벤트가 발생합니다. <br>
