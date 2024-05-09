@@ -291,7 +291,6 @@ sitemap: true
 
 ````html
 
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -387,7 +386,6 @@ sitemap: true
 > dragover 이벤트는 HTML5 드래그 앤 드롭 API의 일부로, 드래그된 요소가 드롭 영역 위에 있을 때 지속적으로 발생합니다. dragover 이벤트는 드롭을 허용하기 위해 event.preventDefault()를 반드시 호출해야 합니다.
 
 ````html
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
